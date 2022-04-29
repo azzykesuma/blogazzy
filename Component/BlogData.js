@@ -7,14 +7,17 @@ import {
 import Image from 'next/image'
 
 const BlogData = ({item}) => {
-    const {blogTitle,blogTags,blogSlugs,blogMedia} = item.fields
+    const {blogTitle,blogSlugs,blogMedia,blogContent} = item.fields
 
     return (
         <>  
-            <Grid item xs={12} spacing={2}>
+            <Grid
+            item
+            md={6}>
                 <Box
                 sx={{
-                    display: 'flex',
+                    display: 'grid',
+                    gridTemplateColumns: '40% 60%',
                 }}
                 >
                     <Image
@@ -27,24 +30,36 @@ const BlogData = ({item}) => {
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
+                        paddingLeft : '30px'
                     }}
                     >
                         <Typography
                         variant='h5'
                         fontSize={'1.2rem'}
-                        ml={2}
                         color='#545454'
+                        sx={{
+                            marginBottom : '10px'
+                        }}
                         >{blogTitle}</Typography>
 
-                        <Box
-                        sx={{
-                            backgroundColor: '#f5f5f5',
-                            padding : '5px',
-                            marginLeft: '10px'
-                        }}
+                        <Typography
+                        variant='body2'
                         >
-                            <Typography>{blogTags}</Typography>
-                        </Box>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Fugiat eum odit vel deserunt repellat eligendi laboriosam provident autem in ipsam, 
+                            quas enim nemo adipisci nam...
+                        </Typography>
+                        <Button
+                        variant='text'
+                        size='small'
+                        color='info'
+                        sx={{
+                            marginTop : '10px',
+                            display : 'flex',
+                            justifyContent : 'left',
+                            padding : 'unset'
+                        }}
+                        >Read More</Button>
                     </Box>
                 </Box>
             </Grid>
