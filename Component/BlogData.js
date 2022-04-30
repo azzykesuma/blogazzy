@@ -5,6 +5,7 @@ import {
     Typography
 } from '@mui/material'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const BlogData = ({item}) => {
     const {blogTitle,blogSlugs,blogMedia,blogContent} = item.fields
@@ -53,13 +54,22 @@ const BlogData = ({item}) => {
                         variant='text'
                         size='small'
                         color='info'
+                        disableRipple
                         sx={{
                             marginTop : '10px',
                             display : 'flex',
                             justifyContent : 'left',
-                            padding : 'unset'
+                            padding : 'unset',
+
+                            '&:hover' : {
+                                backgroundColor : 'unset'
+                            }
                         }}
-                        >Read More</Button>
+                        >
+                            <Link href={`/blog/${blogSlugs}`}>
+                                <a>Read More</a>
+                            </Link>
+                        </Button>
                     </Box>
                 </Box>
             </Grid>
