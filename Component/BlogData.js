@@ -66,7 +66,7 @@ const BlogData = ({item}) => {
                             }
                         }}
                         >
-                            <Link href={`/blog/${blogSlugs}`}>
+                            <Link href={'./blog/' + blogSlugs}>
                                 <a>Read More</a>
                             </Link>
                         </Button>
